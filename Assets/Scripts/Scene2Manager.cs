@@ -26,7 +26,6 @@ public class Scene2Manager : MonoBehaviour
         if (hits.Count > 0)
         {
             ARRaycastHit firstHit = hits[0];
-            Instantiate(PrefabToInstantiate, firstHit.pose.position, firstHit.pose.rotation);
             GameObject cube = Instantiate(PrefabToInstantiate, firstHit.pose.position, firstHit.pose.rotation);
             instantiatedCubes.Add(cube);
         }
