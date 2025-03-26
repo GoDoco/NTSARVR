@@ -49,12 +49,13 @@ public class Scene2Manager : MonoBehaviour
         }
 
         // Update is called once per frame
-        void Update()
+       
+    }
+    void Update()
+    {
+        if (touchPressAction.WasPerformedThisFrame())
         {
-            if (touchPressAction.WasPerformedThisFrame())
-            {
-                OnTouch();
-            }
+            OnTouch();
         }
     }
 }
