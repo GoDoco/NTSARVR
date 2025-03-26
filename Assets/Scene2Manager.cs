@@ -8,6 +8,8 @@ using UnityEngine.XR.ARSubsystems;
 
 public class Scene2Manager : MonoBehaviour
 {
+    public List<Material> Materials;
+    private List<GameObject> instantiatedCubes;
     public PlayerInput PlayerInput;
     private InputAction touchPressAction;
     private InputAction touchPosAction;
@@ -25,21 +27,35 @@ public class Scene2Manager : MonoBehaviour
         {
             ARRaycastHit firstHit = hits[0];
             Instantiate(PrefabToInstantiate, firstHit.pose.position, firstHit.pose.rotation);
+            GameObject cube = Instantiate(PrefabToInstantiate, firstHit.pose.position, firstHit.pose.rotation);
+            instantiatedCubes.Add(cube);
         }
+        
     }
     void Start()
     {
         touchPressAction = PlayerInput.actions["TouchPress"];
         touchPosAction = PlayerInput.actions["TouchPos"];
+        instantiatedCubes = new List<GameObject>();
+        
     }
-    
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeColor()
     {
-        if (touchPressAction.WasPerformedThisFrame())
+        foreach (GameObject cube in instantiatedCubes)
         {
-            OnTouch();
+            int randomIndex = Random.Range(0, Materials.Count);
+            Material randomMaterial = Materials[randomIndex];
+            cube.GetComponent<MeshRenderer>().material = randomMaterial;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (touchPressAction.WasPerformedThisFrame())
+            {
+                OnTouch();
+            }
         }
     }
 }
