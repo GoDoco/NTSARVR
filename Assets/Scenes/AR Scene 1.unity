@@ -225,7 +225,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 260261590}
-  - component: {fileID: 260261589}
   - component: {fileID: 260261591}
   - component: {fileID: 260261592}
   m_Layer: 0
@@ -235,20 +234,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &260261589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260261588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee7b3677fb342947a0d907170cfa030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ParticleEffect: {fileID: 7240422362257902063, guid: 47ada948206a0d347b1287dad8d52829, type: 3}
-  playerInput: {fileID: 260261592}
 --- !u!4 &260261590
 Transform:
   m_ObjectHideFlags: 0
@@ -675,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee7b3677fb342947a0d907170cfa030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParticleEffect: {fileID: 0}
+  ParticleEffect: {fileID: 7240422362257902063, guid: 47ada948206a0d347b1287dad8d52829, type: 3}
   playerInput: {fileID: 260261592}
 --- !u!1 &1208118065
 GameObject:
