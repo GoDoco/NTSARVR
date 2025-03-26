@@ -5,9 +5,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-
+using TMPro;
 public class Scene2Manager : MonoBehaviour
 {
+    private int cubeCount;
+    [SerializeField] private TMP_Text countText;
+    private InputAction touchPhaseAction;
     public List<Material> Materials;
     private List<GameObject> instantiatedCubes;
     public PlayerInput PlayerInput;
@@ -28,11 +31,14 @@ public class Scene2Manager : MonoBehaviour
             ARRaycastHit firstHit = hits[0];
             GameObject cube = Instantiate(PrefabToInstantiate, firstHit.pose.position, firstHit.pose.rotation);
             instantiatedCubes.Add(cube);
+            cubeCount += 1;
+            countText.text = "Cubes: " + cubeCount;
         }
         
     }
     void Start()
     {
+        touchPhaseAction = PlayerInput.actions["TouchPhase"];
         touchPressAction = PlayerInput.actions["TouchPress"];
         touchPosAction = PlayerInput.actions["TouchPos"];
         instantiatedCubes = new List<GameObject>();
@@ -55,7 +61,11 @@ public class Scene2Manager : MonoBehaviour
     {
         if (touchPressAction.WasPerformedThisFrame())
         {
-            OnTouch();
+            var touchPhase = touchPhaseAction.ReadValue<UnityEngine.InputSystem.TouchPhase>();
+            if (touchPhase == UnityEngine.InputSystem.TouchPhase.Began)
+            {
+                OnTouch();
+            }
         }
     }
 }
