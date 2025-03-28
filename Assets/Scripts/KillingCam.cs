@@ -12,10 +12,12 @@ public class KillingCam : MonoBehaviour
     public PlayerInput playerInput;
     private InputAction touchPressAction;
     private InputAction touchPosAction;
-    
+    public int EnemyDestroyed = 0;
+    private ApplictionManager appMan;
     // Start is called before the first frame update
     void Start()
     {
+        appMan=GameObject.Find("XR Origin").GetComponent<ApplictionManager>();
         cam = GetComponent<Camera>();
         touchPressAction = playerInput.actions["TouchPress"];
         touchPosAction = playerInput.actions["TouchPos"];
@@ -24,8 +26,10 @@ public class KillingCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (!touchPressAction.WasPerformedThisFrame())
         {
+            
             return;
         }
         touchPos = touchPosAction.ReadValue<Vector2>();
@@ -38,6 +42,9 @@ public class KillingCam : MonoBehaviour
                 var clone = Instantiate(ParticleEffect, hitObj.transform.position, Quaternion.identity);
                 clone.transform.localScale = hitObj.transform.localScale;
                 Destroy(hitObj);
+                EnemyDestroyed += 1;
+                appMan.SpawnEnemy();
+                //appeler AplicationManager.SpawnEnemy à chaque fois qu'un bloc est détruit
             }
         }
         

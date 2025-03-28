@@ -417,7 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 4416131816375016076, guid: 22d895a84e5fcd64885af574e2cfcc70, type: 3}
   camTransform: {fileID: 1146873220}
-  EnemyNumber: 10
+  EnemyNumber: 1
   SpawnRange: 3
 --- !u!1 &1146873219
 GameObject:
@@ -662,6 +662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParticleEffect: {fileID: 7240422362257902063, guid: 47ada948206a0d347b1287dad8d52829, type: 3}
   playerInput: {fileID: 260261592}
+  EnemyDestroyed: 0
 --- !u!1 &1208118065
 GameObject:
   m_ObjectHideFlags: 0

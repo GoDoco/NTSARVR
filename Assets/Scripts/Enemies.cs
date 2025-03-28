@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro.Examples;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class Enemies : MonoBehaviour
+{
+    private float speed;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    public void MoveEnemy()
+    {
+        
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
