@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ApplictionManager : MonoBehaviour
 {
     public GameObject EnemyPrefab;
     public Transform camTransform;
-    public int EnemyNumber = 0;
+    public int EnemyCap = 2;
+    public int EnemyNumber = 1;
     public float SpawnRange = 3f;
    
    
@@ -18,8 +20,15 @@ public class ApplictionManager : MonoBehaviour
     public void SpawnEnemy()
     {
         EnemyNumber += 1;
-        for (int i = 1; i < EnemyNumber; i++)
+        for (int i = 0 ; i < EnemyNumber /*EnemyCap*/; i++)
         {
+            /*if (EnemyNumber<=EnemyCap)
+            {
+               
+                
+            }
+            */
+            //EnemyNumber += 1;
             float x = camTransform.position.x + Random.Range(-SpawnRange, SpawnRange);
             float y = 3; //bloquer l'aléatoire sur l'axe horizontal
             float z = camTransform.position.z + Random.Range(-SpawnRange, SpawnRange);
