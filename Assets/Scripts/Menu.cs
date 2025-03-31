@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    void Scene1()
+    public void Scene1()
     {
         SceneManager.LoadScene("AR Scene 1");
     }
