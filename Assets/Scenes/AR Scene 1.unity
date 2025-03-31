@@ -417,7 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 4416131816375016076, guid: 22d895a84e5fcd64885af574e2cfcc70, type: 3}
   camTransform: {fileID: 1146873220}
-  EnemyCap: 10
+  EnemyCap: 5
   EnemyNumber: 1
   SpawnRange: 3
 --- !u!1 &1146873219
