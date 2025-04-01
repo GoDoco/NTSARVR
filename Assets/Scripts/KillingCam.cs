@@ -47,7 +47,6 @@ public class KillingCam : MonoBehaviour
                 Enemy.DestroyEnemy(ParticleEffect);
                 score += Enemy.Score;
                 EnemyDestroyed += 1;
-                appMan.SpawnEnemy();
                 appMan.EnemyNumber -= 1;
                 //appeler AplicationManager.SpawnEnemy à chaque fois qu'un bloc est détruit
             }

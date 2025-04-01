@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using TMPro.Examples;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -9,11 +10,12 @@ public class Enemies : MonoBehaviour
     public GameObject baseDestroyAnim;
     private float speed=0.1f;
     public int Score;
+    private ApplictionManager appMan;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        appMan=GameObject.Find("XR Origin").GetComponent<ApplictionManager>();
     }
 
     public void MoveEnemy()
@@ -39,5 +41,6 @@ public class Enemies : MonoBehaviour
         clone.transform.localScale = gameObject.transform.localScale;
         Destroy(clone,1);
         Destroy(gameObject);
+        appMan.SpawnEnemy();
     }
 }

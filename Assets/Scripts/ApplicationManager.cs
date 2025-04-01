@@ -5,16 +5,20 @@ using UnityEngine.Serialization;
 
 public class ApplictionManager : MonoBehaviour
 {
-    public GameObject EnemyPrefab;
+    public GameObject VegetablePrefab;
+    public GameObject BombPrefab;
+    public GameObject SilverPrefab;
+    public GameObject GoldPrefab;
     public Transform camTransform;
     public int EnemyCap = 5;
     public int EnemyNumber = 1;
     public float SpawnRange = 3f;
-    
+    private System.Random Rand;
    
    
     void Start()
     {
+        Rand = new System.Random();
         SpawnEnemy();
     }
     
@@ -24,13 +28,32 @@ public class ApplictionManager : MonoBehaviour
         {
             while (EnemyNumber<EnemyCap)
             {
-                EnemyNumber += 1;
+                
 
                 float x = camTransform.position.x + Random.Range(-SpawnRange, SpawnRange);
                 float y = 3; //bloquer l'aléatoire sur l'axe horizontal
                 float z = camTransform.position.z + Random.Range(-SpawnRange, SpawnRange);
                 Vector3 spawnPos = new Vector3(x, y, z);
-                Instantiate(EnemyPrefab, spawnPos, Quaternion.identity);
+                EnemyNumber += 1;
+                int rand = Rand.Next(10);
+                if (rand <= 2)
+                {
+                    Instantiate(BombPrefab, spawnPos, Quaternion.identity);
+                }
+                else if (rand <= 4)
+                {
+                    Instantiate(SilverPrefab, spawnPos, Quaternion.identity);
+                }
+                else if (rand == 5)
+                {
+                    Instantiate(GoldPrefab, spawnPos, Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(VegetablePrefab, spawnPos, Quaternion.identity);
+                }
+                
+                
             }
         }
         else
