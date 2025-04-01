@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using TMPro.Examples;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class Enemies : MonoBehaviour
@@ -53,6 +54,11 @@ public class Enemies : MonoBehaviour
         else
         {
             _killingCam.score += Score;
+        }
+
+        if (_killingCam.score<=0)
+        {
+            SceneManager.LoadScene("Game Over");
         }
         appMan.SpawnEnemy();
     }
