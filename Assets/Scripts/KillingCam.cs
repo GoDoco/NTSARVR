@@ -52,8 +52,7 @@ public class KillingCam : MonoBehaviour
                 clone.transform.localScale = hitObj.transform.localScale;
                 Destroy(hitObj);*/
                 var Enemy = hitObj.GetComponent<Enemies>();
-                Enemy.DestroyEnemy(ParticleEffect);
-                score += Enemy.Score;
+                Enemy.DestroyEnemy(ParticleEffect,false);
                 EnemyDestroyed += 1;
                 appMan.EnemyNumber -= 1;
                 //appeler AplicationManager.SpawnEnemy à chaque fois qu'un bloc est détruit

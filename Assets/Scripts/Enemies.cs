@@ -11,11 +11,13 @@ public class Enemies : MonoBehaviour
     private float speed=0.1f;
     public int Score;
     private ApplictionManager appMan;
+    private KillingCam _killingCam;
     
     // Start is called before the first frame update
     void Start()
     {
         appMan=GameObject.Find("XR Origin").GetComponent<ApplictionManager>();
+        _killingCam = GameObject.Find("Main Camera").GetComponent<KillingCam>();
     }
 
     public void MoveEnemy()
@@ -35,12 +37,23 @@ public class Enemies : MonoBehaviour
         MoveEnemy();
     }
 
-    public void DestroyEnemy(GameObject destroyAnim)
+    public void DestroyEnemy(GameObject destroyAnim, bool naturalDestruction=true)
     {
         var clone = Instantiate(destroyAnim, gameObject.transform.position, Quaternion.identity);
         clone.transform.localScale = gameObject.transform.localScale;
         Destroy(clone,1);
         Destroy(gameObject);
+        if (naturalDestruction)
+        {
+            if (Score > 0)
+            {
+                _killingCam.score -= Score;
+            }
+        }
+        else
+        {
+            _killingCam.score += Score;
+        }
         appMan.SpawnEnemy();
     }
 }

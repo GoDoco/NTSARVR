@@ -9,6 +9,11 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("AR Scene 1");
     }
+    
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MENU");
+    }
     // Start is called before the first frame update
     void Start()
     {
