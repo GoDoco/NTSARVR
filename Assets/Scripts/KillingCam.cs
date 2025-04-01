@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,7 @@ public class KillingCam : MonoBehaviour
     public int EnemyDestroyed = 0;
     private ApplictionManager appMan;
     public int score = 5;
+    private TextMeshProUGUI textMesh;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,12 @@ public class KillingCam : MonoBehaviour
         cam = GetComponent<Camera>();
         touchPressAction = playerInput.actions["TouchPress"];
         touchPosAction = playerInput.actions["TouchPos"];
+        textMesh = GameObject.Find("HUD").GetComponentInChildren<TextMeshProUGUI>();
+    }
+
+    void UpdateScore()
+    {
+        textMesh.text = "Score : " + score;
     }
 
     // Update is called once per frame
@@ -51,6 +59,6 @@ public class KillingCam : MonoBehaviour
                 //appeler AplicationManager.SpawnEnemy à chaque fois qu'un bloc est détruit
             }
         }
-        
+        UpdateScore();
     }
 }
