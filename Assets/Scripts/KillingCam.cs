@@ -35,6 +35,7 @@ public class KillingCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateScore();
         
         if (!touchPressAction.WasPerformedThisFrame())
         {
@@ -53,11 +54,9 @@ public class KillingCam : MonoBehaviour
                 Destroy(hitObj);*/
                 var Enemy = hitObj.GetComponent<Enemies>();
                 Enemy.DestroyEnemy(ParticleEffect,false);
-                EnemyDestroyed += 1;
-                appMan.EnemyNumber -= 1;
                 //appeler AplicationManager.SpawnEnemy à chaque fois qu'un bloc est détruit
             }
         }
-        UpdateScore();
+        
     }
 }

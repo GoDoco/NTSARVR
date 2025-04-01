@@ -44,6 +44,8 @@ public class Enemies : MonoBehaviour
         clone.transform.localScale = gameObject.transform.localScale;
         Destroy(clone,1);
         Destroy(gameObject);
+        _killingCam.EnemyDestroyed += 1;
+        appMan.EnemyNumber -= 1;
         if (naturalDestruction)
         {
             if (Score > 0)
