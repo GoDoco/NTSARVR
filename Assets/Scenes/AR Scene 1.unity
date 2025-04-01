@@ -415,7 +415,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8fb72cae547af4eb03b41f3d583a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 4416131816375016076, guid: 22d895a84e5fcd64885af574e2cfcc70, type: 3}
+  VegetablePrefab: {fileID: 4416131816375016076, guid: c30624976158dd14e8b25d10ea06fc65, type: 3}
+  BombPrefab: {fileID: 4416131816375016076, guid: 22d895a84e5fcd64885af574e2cfcc70, type: 3}
+  SilverPrefab: {fileID: 9031663626834118666, guid: 057c5781668cab443b2df83af7aabe6b, type: 3}
+  GoldPrefab: {fileID: 8297119031714221707, guid: 0d3b2ee1fc95a534d853dfec15388246, type: 3}
   camTransform: {fileID: 1146873220}
   EnemyCap: 5
   EnemyNumber: 1
@@ -664,6 +667,7 @@ MonoBehaviour:
   ParticleEffect: {fileID: 7240422362257902063, guid: 47ada948206a0d347b1287dad8d52829, type: 3}
   playerInput: {fileID: 260261592}
   EnemyDestroyed: 0
+  score: 5
 --- !u!1 &1208118065
 GameObject:
   m_ObjectHideFlags: 0
