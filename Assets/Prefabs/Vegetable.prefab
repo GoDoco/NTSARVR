@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6404536737031814282}
   - component: {fileID: 615890272972263938}
   m_Layer: 0
-  m_Name: Bomb
+  m_Name: Vegetable
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49a1b0fcc0368454e9b3e713ae45cd7d, type: 2}
+  - {fileID: 2100000, guid: a1076844c75ad0a469f40ee1d5b21416, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDestroyAnim: {fileID: 2495288307340335728, guid: 5c0e7d4b09cad2a4f9de6ad1b631879a, type: 3}
-  Score: -1
+  Score: 1
