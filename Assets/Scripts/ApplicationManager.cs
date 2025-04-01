@@ -10,6 +10,7 @@ public class ApplictionManager : MonoBehaviour
     public int EnemyCap = 5;
     public int EnemyNumber = 1;
     public float SpawnRange = 3f;
+    
    
    
     void Start()

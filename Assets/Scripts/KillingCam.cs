@@ -14,7 +14,7 @@ public class KillingCam : MonoBehaviour
     private InputAction touchPosAction;
     public int EnemyDestroyed = 0;
     private ApplictionManager appMan;
-    
+    public int score = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +43,9 @@ public class KillingCam : MonoBehaviour
                 /*var clone = Instantiate(ParticleEffect, hitObj.transform.position, Quaternion.identity);
                 clone.transform.localScale = hitObj.transform.localScale;
                 Destroy(hitObj);*/
-                hitObj.GetComponent<Enemies>().DestroyEnemy(ParticleEffect);
+                var Enemy = hitObj.GetComponent<Enemies>();
+                Enemy.DestroyEnemy(ParticleEffect);
+                score += Enemy.Score;
                 EnemyDestroyed += 1;
                 appMan.SpawnEnemy();
                 appMan.EnemyNumber -= 1;
