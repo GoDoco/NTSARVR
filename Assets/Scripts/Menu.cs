@@ -26,7 +26,11 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("AR Scene 1");
         difficulty = 3;
     }
-    
+
+    public void SameDiff()
+    {
+        SceneManager.LoadScene("AR Scene 1");
+    }
     
     public void MainMenu()
     {
