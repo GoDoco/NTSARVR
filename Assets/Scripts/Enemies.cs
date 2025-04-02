@@ -13,9 +13,7 @@ public class Enemies : MonoBehaviour
     public int Score;
     private ApplictionManager appMan;
     private KillingCam _killingCam;
-    private AudioClip damageSound;
-    private AudioSource audioSource;
-
+  
 
     
     // Start is called before the first frame update
@@ -24,7 +22,6 @@ public class Enemies : MonoBehaviour
         appMan=GameObject.Find("XR Origin").GetComponent<ApplictionManager>();
         _killingCam = GameObject.Find("Main Camera").GetComponent<KillingCam>();
         speed*=Menu.difficulty;
-        audioSource = GetComponent<AudioSource>();
     }
 
     public void MoveEnemy()
@@ -62,8 +59,7 @@ public class Enemies : MonoBehaviour
         else
         {
             _killingCam.score += Score;
-            audioSource.clip = damageSound;
-            audioSource.Play();
+            
         }
 
         if (_killingCam.score<=0)
