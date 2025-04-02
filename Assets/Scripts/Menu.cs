@@ -5,13 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public static int difficulty;
     public void Difficulty()
     {
         SceneManager.LoadScene("Difficulty");
+        
     }
-    public void Scene1()
+    public void Diff1()
     {
         SceneManager.LoadScene("AR Scene 1");
+        difficulty = 1;
+    }
+    public void Diff2()
+    {
+        SceneManager.LoadScene("AR Scene 1");
+        difficulty = 2;
+    }
+    public void Diff3()
+    {
+        SceneManager.LoadScene("AR Scene 1");
+        difficulty = 3;
     }
     
     

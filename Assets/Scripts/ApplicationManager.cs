@@ -14,14 +14,14 @@ public class ApplictionManager : MonoBehaviour
     public int EnemyNumber = 1;
     public float SpawnRange = 3f;
     private System.Random Rand;
-    public int Difficulty;
+    
    
    
     void Start()
     {
         Rand = new System.Random();
         SpawnEnemy();
-        EnemyCap*=Difficulty;
+        EnemyCap*=Menu.difficulty;
     }
     
     public void SpawnEnemy()

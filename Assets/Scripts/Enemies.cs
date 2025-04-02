@@ -13,14 +13,15 @@ public class Enemies : MonoBehaviour
     public int Score;
     private ApplictionManager appMan;
     private KillingCam _killingCam;
-    public int Difficulty;
+
+
     
     // Start is called before the first frame update
     void Start()
     {
         appMan=GameObject.Find("XR Origin").GetComponent<ApplictionManager>();
         _killingCam = GameObject.Find("Main Camera").GetComponent<KillingCam>();
-        speed*=Difficulty;
+        speed*=Menu.difficulty;
     }
 
     public void MoveEnemy()
