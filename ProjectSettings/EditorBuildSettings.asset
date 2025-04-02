@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: e9e970d300528ae4190645c4ddb41b9f
+  - enabled: 1
+    path: Assets/Scenes/Win Screen.unity
+    guid: 1912f1761afad28488aa7ee60b498350
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 8d527d1d67697f942ab2fb8021e2e9fe, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: ba6d4ad11ba1f014587e2cc0273da27e, type: 2}

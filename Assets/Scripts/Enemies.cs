@@ -62,6 +62,10 @@ public class Enemies : MonoBehaviour
         {
             SceneManager.LoadScene("Game Over");
         }
+        else if (_killingCam.score >= 50)
+        {
+            SceneManager.LoadScene("Win Screen");
+        }
         appMan.SpawnEnemy();
     }
 }
