@@ -5,7 +5,7 @@ First release of this small game that you probably can't play if you don't have 
 
 https://developers.google.com/ar/devices?hl=fr
 
-In vegetable samurai your goal is to cut through various vegetables which give you points
+In vegetable samurai your goal is to cut through various vegetables which gives you points
 Green : 1
 Silver : 3 
 Gold : 5
