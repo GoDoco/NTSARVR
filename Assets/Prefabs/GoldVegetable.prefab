@@ -121,3 +121,5 @@ MonoBehaviour:
   baseDestroyAnim: {fileID: 2495288307340335728, guid: 5c0e7d4b09cad2a4f9de6ad1b631879a, type: 3}
   speed: 0.1
   Score: 5
+  damageSoundClip: {fileID: 8300000, guid: 5601405102638934e8b6beb3b4a308f9, type: 3}
+  fallSoundClip: {fileID: 8300000, guid: a0ccde71f45ed8d44a62d04207822b1f, type: 3}

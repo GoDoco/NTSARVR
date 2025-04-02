@@ -13,7 +13,8 @@ public class Enemies : MonoBehaviour
     public int Score;
     private ApplictionManager appMan;
     private KillingCam _killingCam;
-  
+    [SerializeField] private AudioClip damageSoundClip;
+    [SerializeField] private AudioClip fallSoundClip;
 
     
     // Start is called before the first frame update
@@ -58,6 +59,7 @@ public class Enemies : MonoBehaviour
         }
         else
         {
+            SoundFXManager.instance.PlaySoundFXClip(damageSoundClip,transform,1f);
             _killingCam.score += Score;
             
         }
