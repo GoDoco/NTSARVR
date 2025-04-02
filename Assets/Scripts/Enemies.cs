@@ -52,15 +52,16 @@ public class Enemies : MonoBehaviour
         appMan.EnemyNumber -= 1;
         if (naturalDestruction)
         {
+            SoundFXManager.instance.PlaySoundFXClip(fallSoundClip,transform,0.5f);
+
             if (Score > 0)
             {
-                SoundFXManager.instance.PlaySoundFXClip(fallSoundClip,transform,1f);
                 _killingCam.score -= Score;
             }
         }
         else
         {
-            SoundFXManager.instance.PlaySoundFXClip(damageSoundClip,transform,1f);
+            SoundFXManager.instance.PlaySoundFXClip(damageSoundClip,transform,0.5f);
             _killingCam.score += Score;
             
         }
