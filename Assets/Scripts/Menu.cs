@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public void Difficulty()
+    {
+        SceneManager.LoadScene("Difficulty");
+    }
     public void Scene1()
     {
         SceneManager.LoadScene("AR Scene 1");
     }
+    
     
     public void MainMenu()
     {

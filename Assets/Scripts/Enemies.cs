@@ -9,16 +9,18 @@ using UnityEngine.UIElements;
 public class Enemies : MonoBehaviour
 {
     public GameObject baseDestroyAnim;
-    private float speed=0.1f;
+    public float speed=0.1f;
     public int Score;
     private ApplictionManager appMan;
     private KillingCam _killingCam;
+    public int Difficulty;
     
     // Start is called before the first frame update
     void Start()
     {
         appMan=GameObject.Find("XR Origin").GetComponent<ApplictionManager>();
         _killingCam = GameObject.Find("Main Camera").GetComponent<KillingCam>();
+        speed*=Difficulty;
     }
 
     public void MoveEnemy()
