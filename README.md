@@ -2,6 +2,7 @@
 
 
 First release of this small game that you probably can't play if you don't have a phone listed here
+
 https://developers.google.com/ar/devices?hl=fr
 
 In vegetable samurai your goal is to cut through various vegetables which give you points
