@@ -54,6 +54,7 @@ public class Enemies : MonoBehaviour
         {
             if (Score > 0)
             {
+                SoundFXManager.instance.PlaySoundFXClip(fallSoundClip,transform,1f);
                 _killingCam.score -= Score;
             }
         }
